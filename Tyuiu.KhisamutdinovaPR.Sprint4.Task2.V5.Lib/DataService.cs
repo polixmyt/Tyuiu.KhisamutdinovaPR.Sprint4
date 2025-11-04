@@ -1,8 +1,9 @@
 ﻿using System;
+using tyuiu.cources.programming.interfaces.Sprint4;
 
 namespace Tyuiu.MargaryanSG.Sprint4.Task2.V5.Lib
 {
-    public class DataService
+    public class DataService: ISprint4Task2V5
     {
         public int Calculate(int[] array)
         {
