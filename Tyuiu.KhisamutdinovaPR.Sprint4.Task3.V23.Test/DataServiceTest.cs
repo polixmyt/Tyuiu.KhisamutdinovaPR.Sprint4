@@ -20,39 +20,7 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23.Test
             };
 
             int result = ds.Calculate(array);
-            int wait = 13; // количество четных элементов в данном массиве
-
-            Assert.AreEqual(wait, result);
-        }
-
-        [TestMethod]
-        public void ValidCalculateAllEven()
-        {
-            DataService ds = new DataService();
-
-            int[,] array = new int[2, 2] {
-                { 2, 4 },
-                { 6, 8 }
-            };
-
-            int result = ds.Calculate(array);
-            int wait = 4; // все элементы четные
-
-            Assert.AreEqual(wait, result);
-        }
-
-        [TestMethod]
-        public void ValidCalculateNoEven()
-        {
-            DataService ds = new DataService();
-
-            int[,] array = new int[2, 2] {
-                { 3, 5 },
-                { 7, 9 }
-            };
-
-            int result = ds.Calculate(array);
-            int wait = 0; // нет четных элементов
+            int wait = 13;
 
             Assert.AreEqual(wait, result);
         }

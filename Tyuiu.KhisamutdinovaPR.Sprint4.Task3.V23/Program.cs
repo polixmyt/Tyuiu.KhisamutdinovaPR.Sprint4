@@ -7,8 +7,23 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23
     {
         static void Main(string[] args)
         {
-            DataService ds = new DataService();
+            Console.Title = "Спринт #4 | Выполнила: Хисамутдинова П. Р. | ИСТНб-23-1";
+            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("* Спринт #4                                                               *");
+            Console.WriteLine("* Тема: Обработка структурных типов                                       *");
+            Console.WriteLine("* Задание #3                                                              *");
+            Console.WriteLine("* Вариант #23                                                             *");
+            Console.WriteLine("* Выполнила: Хисамутдинова Полина Ринатовна | ИСТНб-23-1                  *");
+            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("* УСЛОВИЕ:                                                                *");
+            Console.WriteLine("* Дан двумерный целочисленный массив 5 на 5 элементов, заполненный        *");
+            Console.WriteLine("* статическими значениями в диапазоне от 2 до 8. Подсчитайте количество   *");
+            Console.WriteLine("* четных элементов во всем массиве.                                       *");
+            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
+            Console.WriteLine("***************************************************************************");
 
+            DataService ds = new DataService();
             int[,] array = new int[5, 5] {
                 { 7, 5, 5, 6, 7 },
                 { 8, 7, 8, 4, 3 },
@@ -17,18 +32,12 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23
                 { 5, 2, 4, 2, 3 }
             };
 
-            Console.WriteLine("***************************************************************************");
-            Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
-            Console.WriteLine("***************************************************************************");
-            Console.WriteLine("Двумерный массив 5x5:");
-            Console.WriteLine();
-
-            // Вывод массива в красивом формате
+            Console.WriteLine("Массив:");
             for (int i = 0; i < 5; i++)
             {
                 for (int j = 0; j < 5; j++)
                 {
-                    Console.Write(array[i, j] + "\t");
+                    Console.Write($"{array[i, j]} \t");
                 }
                 Console.WriteLine();
             }
@@ -39,28 +48,28 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23
             Console.WriteLine("***************************************************************************");
 
             int result = ds.Calculate(array);
-            Console.WriteLine("Количество четных элементов в массиве = " + result);
+            Console.WriteLine($"Количество четных элементов в массиве = {result}");
 
             Console.WriteLine();
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine("* ПРОВЕРКА:                                                              *");
+            Console.WriteLine("* ДЕТАЛЬНАЯ ПРОВЕРКА:                                                    *");
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine("Четные элементы в массиве:");
 
-            // Дополнительная проверка - покажем какие элементы считаются четными
+            int evenCount = 0;
+            Console.WriteLine("Четные элементы:");
             for (int i = 0; i < 5; i++)
             {
                 for (int j = 0; j < 5; j++)
                 {
                     if (array[i, j] % 2 == 0)
                     {
-                        Console.WriteLine($"array[{i},{j}] = {array[i, j]} (четный)");
+                        evenCount++;
+                        Console.WriteLine($"array[{i},{j}] = {array[i, j]}");
                     }
                 }
             }
+            Console.WriteLine($"Всего четных элементов: {evenCount}");
 
-            Console.WriteLine();
-            Console.WriteLine("Нажмите любую клавишу для завершения...");
             Console.ReadKey();
         }
     }
