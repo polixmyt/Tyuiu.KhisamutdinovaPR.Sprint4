@@ -7,7 +7,7 @@ using tyuiu.cources.programming.interfaces.Sprint4;
 
 namespace Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23.Lib
 {
-    public class DataService : ISprint4Task1V23
+    public class DataService : ISprint4Task3V23
     {
         /// <summary>
         /// Подсчитывает количество чётных элементов в одномерном массиве.
@@ -26,6 +26,11 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23.Lib
             }
 
             return countEven;
+        }
+
+        public int Calculate(int[,] array)
+        {
+            throw new NotImplementedException();
         }
     }
 }
