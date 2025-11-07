@@ -1,6 +1,6 @@
 ﻿// Author: Хисамутдинова Полина
 // Project: Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23
-// Description: Unit-тест метода Calculate — подсчёт чётных элементов в одномерном массиве.
+// Description: Unit-тест метода Calculate — подсчёт чётных элементов в двумерном массиве.
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23.Lib;
@@ -11,16 +11,16 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23.Test
     public class DataServiceTest
     {
         [TestMethod]
-        public void Calculate_ShouldReturn13_ForGivenArray()
+        public void Calculate_ShouldReturn13_ForGivenMatrix()
         {
             // arrange
-            int[] array =
+            int[,] array =
             {
-                7, 5, 5, 6, 7,
-                8, 7, 8, 4, 3,
-                5, 6, 7, 8, 3,
-                4, 2, 3, 6, 4,
-                5, 2, 4, 2, 3
+                { 7, 5, 5, 6, 7 },
+                { 8, 7, 8, 4, 3 },
+                { 5, 6, 7, 8, 3 },
+                { 4, 2, 3, 6, 4 },
+                { 5, 2, 4, 2, 3 }
             };
 
             DataService ds = new DataService();
