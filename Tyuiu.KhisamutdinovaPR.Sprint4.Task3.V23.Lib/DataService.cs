@@ -12,7 +12,7 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23.Lib
         /// <summary>
         /// Подсчитывает количество чётных элементов в одномерном массиве.
         /// </summary>
-        public int Calculate(int[] array)
+        public int Calculate(int[,] array)
         {
             if (array == null)
                 throw new NotImplementedException(nameof(array));
