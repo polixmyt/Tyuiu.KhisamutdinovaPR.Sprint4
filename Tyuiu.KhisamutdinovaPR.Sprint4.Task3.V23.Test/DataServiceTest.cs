@@ -11,7 +11,8 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23.Test
         {
             DataService ds = new DataService();
 
-            int[,] array = new int[5, 5] {
+            int[,] matrix =
+            {
                 { 7, 5, 5, 6, 7 },
                 { 8, 7, 8, 4, 3 },
                 { 5, 6, 7, 8, 3 },
@@ -19,10 +20,10 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23.Test
                 { 5, 2, 4, 2, 3 }
             };
 
-            int result = ds.Calculate(array);
-            int wait = 13;
+            int result = ds.Calculate(matrix);
 
-            Assert.AreEqual(wait, result);
+            int expected = 12; // количество четных элементов
+            Assert.AreEqual(expected, result);
         }
     }
 }
