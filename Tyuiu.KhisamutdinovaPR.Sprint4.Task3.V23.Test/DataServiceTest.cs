@@ -9,7 +9,7 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23.Test
         [TestMethod]
         public void ValidCalculate()
         {
-            DataService ds = new DataService();
+            var ds = new DataService();
 
             int[,] matrix =
             {
@@ -21,8 +21,8 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23.Test
             };
 
             int result = ds.Calculate(matrix);
+            int expected = 13;
 
-            int expected = 12; // количество четных элементов
             Assert.AreEqual(expected, result);
         }
     }

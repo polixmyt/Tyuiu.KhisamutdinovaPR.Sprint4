@@ -15,10 +15,8 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23
             Console.WriteLine("* Вариант #23                                                             *");
             Console.WriteLine("* Выполнила: Хисамутдинова Полина Руслановна | ПКТб-25-1                  *");
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Дан двумерный целочисленный массив 5x5 элементов, заполненный           *");
-            Console.WriteLine("* статическими значениями в диапазоне от 2 до 8. Подсчитать количество     *");
-            Console.WriteLine("* четных элементов во всем массиве.                                       *");
+            Console.WriteLine("* УСЛОВИЕ: Подсчитать количество четных элементов в статическом массиве   *");
+            Console.WriteLine("* 5x5 со значениями в диапазоне [2..8].                                   *");
             Console.WriteLine("***************************************************************************");
 
             int[,] matrix =
@@ -31,24 +29,20 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23
             };
 
             Console.WriteLine("Исходный массив:");
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                for (int j = 0; j < 5; j++)
-                {
+                for (int j = 0; j < matrix.GetLength(1); j++)
                     Console.Write(matrix[i, j] + "\t");
-                }
                 Console.WriteLine();
             }
 
-            DataService ds = new DataService();
+            var ds = new DataService();
             int result = ds.Calculate(matrix);
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
-            Console.WriteLine($"Количество четных элементов: {result}");
-
-            Console.WriteLine("Нажмите любую клавишу для выхода...");
+            Console.WriteLine($"Количество четных элементов: {result}"); // должно вывести 13
             Console.ReadKey();
         }
     }
