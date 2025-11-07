@@ -7,11 +7,10 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23.Test
     public class DataServiceTest
     {
         [TestMethod]
-        public void ValidCalculate()
+        public void Calculate_ShouldReturn_13_ForGivenMatrix()
         {
-            var ds = new DataService();
-
-            int[,] matrix =
+            // arrange
+            int[,] matrix = new int[5, 5]
             {
                 { 7, 5, 5, 6, 7 },
                 { 8, 7, 8, 4, 3 },
@@ -20,10 +19,13 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23.Test
                 { 5, 2, 4, 2, 3 }
             };
 
-            int result = ds.Calculate(matrix);
-            int expected = 13;
+            DataService ds = new DataService();
 
-            Assert.AreEqual(expected, result);
+            // act
+            int result = ds.Calculate(matrix);
+
+            // assert
+            Assert.AreEqual(13, result);
         }
     }
 }

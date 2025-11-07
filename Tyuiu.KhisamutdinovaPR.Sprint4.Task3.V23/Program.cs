@@ -7,19 +7,10 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23
     {
         static void Main(string[] args)
         {
-            Console.Title = "Спринт #4 | Выполнила: Хисамутдинова Полина Руслановна | ПКТб-25-1";
-            Console.WriteLine("***************************************************************************");
-            Console.WriteLine("* Спринт #4                                                               *");
-            Console.WriteLine("* Тема: Двумерные массивы                                                 *");
-            Console.WriteLine("* Задание #3                                                              *");
-            Console.WriteLine("* Вариант #23                                                             *");
-            Console.WriteLine("* Выполнила: Хисамутдинова Полина Руслановна | ПКТб-25-1                  *");
-            Console.WriteLine("***************************************************************************");
-            Console.WriteLine("* УСЛОВИЕ: Подсчитать количество четных элементов в статическом массиве   *");
-            Console.WriteLine("* 5x5 со значениями в диапазоне [2..8].                                   *");
-            Console.WriteLine("***************************************************************************");
+            Console.Title = "Спринт 4 | Таск 3 | Вариант 23 — Количество чётных в 2D массиве";
 
-            int[,] matrix =
+            // Статический ввод по условию
+            int[,] matrix = new int[5, 5]
             {
                 { 7, 5, 5, 6, 7 },
                 { 8, 7, 8, 4, 3 },
@@ -28,21 +19,17 @@ namespace Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23
                 { 5, 2, 4, 2, 3 }
             };
 
-            Console.WriteLine("Исходный массив:");
-            for (int i = 0; i < matrix.GetLength(0); i++)
-            {
-                for (int j = 0; j < matrix.GetLength(1); j++)
-                    Console.Write(matrix[i, j] + "\t");
-                Console.WriteLine();
-            }
+            DataService ds = new DataService();
+            int evenCount = ds.Calculate(matrix);
 
-            var ds = new DataService();
-            int result = ds.Calculate(matrix);
-
-            Console.WriteLine("***************************************************************************");
-            Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
-            Console.WriteLine("***************************************************************************");
-            Console.WriteLine($"Количество четных элементов: {result}"); // должно вывести 13
+            // Оформление по шаблону репозитория: чёткий вывод результата
+            Console.WriteLine("Двумерные массивы (статический ввод)");
+            Console.WriteLine("Спринт: 4 | Задание: 3 | Вариант: 23");
+            Console.WriteLine("---------------------------------------");
+            Console.WriteLine("Матрица 5x5 (2..8) задана статически.");
+            Console.WriteLine($"Количество чётных элементов: {evenCount}");
+            Console.WriteLine("---------------------------------------");
+            Console.WriteLine("Нажмите любую клавишу для выхода...");
             Console.ReadKey();
         }
     }

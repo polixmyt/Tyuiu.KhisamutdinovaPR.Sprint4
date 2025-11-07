@@ -1,24 +1,33 @@
-﻿using tyuiu.cources.programming.interfaces.Sprint4;
+﻿using System;
+using tyuiu.cources.programming.interfaces.Sprint4;
 
 namespace Tyuiu.KhisamutdinovaPR.Sprint4.Task3.V23.Lib
 {
+    // Интерфейс ожидается в DLL: ISprint4Task3V23
+    // Сигнатура метода по типовым заданиям спринта 4 — Calculate(int[,] matrix)
     public class DataService : ISprint4Task3V23
     {
-        public int Calculate(int[,] array)
+        /// <summary>
+        /// Возвращает количество чётных элементов в переданной двумерной матрице.
+        /// </summary>
+        public int Calculate(int[,] matrix)
         {
-            int count = 0;
-            int rows = array.GetLength(0);
-            int cols = array.GetLength(1);
+            if (matrix == null) throw new ArgumentNullException(nameof(matrix));
+
+            int rows = matrix.GetLength(0);
+            int cols = matrix.GetLength(1);
+            int countEven = 0;
 
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    if (array[i, j] % 2 == 0)
-                        count++;
+                    if ((matrix[i, j] & 1) == 0) // быстрее, чем % 2 == 0
+                        countEven++;
                 }
             }
-            return count; // должно вернуть 13 для заданной матрицы
+
+            return countEven;
         }
     }
 }
